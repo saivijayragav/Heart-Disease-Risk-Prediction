@@ -1,0 +1,5 @@
+ATA (Atypical Angina): The pain might be felt as a sharp or stabbing sensation rather than the typical squeezing or pressure.
+NAP (Non-Anginal Pain): The pain is typically not brought on by physical exertion and may not respond to treatments that alleviate angina.
+ASY (Asymptomatic): Asymptomatic means that the individual does not experience any chest pain. Despite the absence of pain, they may still have underlying heart disease or other conditions that can be detected through other diagnostic methods.
+TA (Typical Angina): The pain is often described as squeezing, pressure, heaviness, or tightness in the chest.
+onclick="window.location.href='{{ url_for('redirect') }}'"

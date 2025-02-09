@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{}
+        .parameter-container {
+            margin: 20px;
+            width: 400px;
+        }
+        .bar {
+            position: relative;
+            height: 30px;
+            background: linear-gradient(to right, rgb(0, 76, 255), rgb(128, 248, 128),rgb(243, 101, 101));
+            border-radius: 1000px;
+        }
+        .bar-indicator {
+            position: absolute;
+            top: -25px;
+            height: 30px;
+            width: 2px;
+            background: black;
+        }
+        .bar-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        .bar-indicator{
+            transition: all 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<div class="parameter-container">
+    <div class="bar" id="cholesterol-bar"></div>
+    <div class="bar-labels">
+        <span>Q1 (Low)</span>
+        <span>Q2 (Median)</span>
+        <span>Q3 (High)</span>
+    </div>
+</div>
+
+<script>
+    // Example values: Change based on your dataset
+    const min = 100;  // Minimum value for the parameter (e.g., cholesterol)
+    const q1 = 150;   // Q1 value (25th percentile)
+    const q2 = 200;   // Median (Q2 or 50th percentile)
+    const q3 = 250;   // Q3 value (75th percentile)
+    const max = 300;  // Maximum value for the parameter
+
+    var userValue = 120;  // Value for the user
+
+    // Calculate position of the arrow (bar-indicator) based on the user value
+    var cholesterolBar = document.getElementById('cholesterol-bar');
+    var barWidth = cholesterolBar.offsetWidth;
+    var userPosition = ((userValue - min) / (max - min)) * barWidth;
+
+    // Create the indicator arrow
+    var barIndicator = document.createElement('div');
+    barIndicator.className = 'bar-indicator';
+    barIndicator.id = 'indi';
+    barIndicator.style.left = `${userPosition}px`;  // Position the arrow
+    cholesterolBar.appendChild(barIndicator);
+    setTimeout(()=>{
+        userValue = 230;
+        var userPosition = ((userValue - min) /(max-min)) * barWidth;
+
+    // Create the indicator arrow
+        var barIndicator = document.getElementById('indi');
+        barIndicator.style.left = `${userPosition+100}px`;  // Position the arrow
+        console.log('helo')
+    }, 2000)
+</script>
+
+</body>
+</html>

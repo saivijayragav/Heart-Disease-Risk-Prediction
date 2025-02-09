@@ -1,0 +1,27 @@
+25th Quartile
+RestingBP      120.00
+Cholesterol    173.25
+MaxHR          120.00
+Oldpeak          0.00
+Name: 0.25, dtype: float64
+
+75th Quartile
+RestingBP      140.0
+Cholesterol    267.0
+MaxHR          156.0
+Oldpeak          1.5
+Name: 0.75, dtype: float64
+
+Lower Bound
+RestingBP      90.000
+Cholesterol    32.625
+MaxHR          66.000
+Oldpeak         0.000
+dtype: float64
+
+Upper Bound
+RestingBP      170.000
+Cholesterol    407.625
+MaxHR          210.000
+Oldpeak          3.750
+dtype: float64
